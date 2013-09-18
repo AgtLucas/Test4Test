@@ -20,5 +20,28 @@ namespace Test4Test.Controllers
             return View();
         }
 
+        public List<Pais> Paises
+        {
+            get
+            {
+                if (Session["paises"] == null)
+                {
+                    List<Pais> paises = new List<Pais>{
+            new Pais{ Nome = "Brasil", Continente = "América do Sul", Idioma = "Português"},
+            new Pais{ Nome = "Alemanha", Continente = "Europa", Idioma = "Alemão"},
+            new Pais{ Nome = "Argentina", Continente = "América do Sul", Idioma = "Espanhol"}};
+                    Session.Add("paises", paises);
+                }
+
+                return (List<Pais>)Session["paises"];
+            }
+            set
+            {
+                Session["paises"] = value;
+            }
+
+        }
+
+
     }
 }

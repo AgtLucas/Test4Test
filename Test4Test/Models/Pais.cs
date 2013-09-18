@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Test4Test.Models
 {
-    public class Paises
+    public class Pais
     {
     }
 }
